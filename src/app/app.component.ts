@@ -1,23 +1,16 @@
-import { Component } from '@angular/core';
-import { SumatoriaService, Sumatoria } from './sumatoria.service';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { PreloaderService } from '@core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  numero1: number = 0;
-  numero2: number = 0;
-  resultado: number | null = null;
-  sumatorias: Sumatoria[] = [];
+export class AppComponent implements OnInit, AfterViewInit {
+  constructor(private preloader: PreloaderService) {}
 
-  constructor(private sumatoriaService: SumatoriaService) {}
+  ngOnInit() {}
 
-  sumar() {
-    this.sumatoriaService.createSumatoria(this.numero1, this.numero2).subscribe(sumatoria => {
-      this.resultado = sumatoria.resultado;
-      this.sumatorias.push(sumatoria);
-    });
+  ngAfterViewInit() {
+    this.preloader.hide();
   }
 }

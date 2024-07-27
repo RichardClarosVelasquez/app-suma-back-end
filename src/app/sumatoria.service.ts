@@ -24,4 +24,5 @@ export class SumatoriaService {
   getSumatorias(): Observable<Sumatoria[]> {
     return this.http.get<Sumatoria[]>(this.apiUrl);
   }
+
 }
