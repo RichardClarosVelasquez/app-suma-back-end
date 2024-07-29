@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   sumar(): void {
     this.resultado = this.numero1 + this.numero2;
-    // this.saveSumatoria(this.numero1, this.numero2, this.resultado);
+    this.saveSumatoria(this.numero1, this.numero2, this.resultado);
   }
 
   getSumatorias(): void {
@@ -30,9 +30,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // saveSumatoria(numero1: number, numero2: number, resultado: number): void {
-  //   this.sumatoriaService.saveSumatoria({ numero1, numero2, resultado }).subscribe(() => {
-  //     this.getSumatorias();
-  //   });
-  // }
+  saveSumatoria(numero1: number, numero2: number, resultado: number): void {
+    this.sumatoriaService.saveSumatoria({ numero1, numero2, resultado }).subscribe(() => {
+      this.getSumatorias();
+    });
+  }
 }

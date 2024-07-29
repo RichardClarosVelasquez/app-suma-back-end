@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 export interface Sumatoria {
   id: number;
   numero1: number;
@@ -24,5 +25,7 @@ export class SumatoriaService {
   getSumatorias(): Observable<Sumatoria[]> {
     return this.http.get<Sumatoria[]>(this.apiUrl);
   }
-
+  saveSumatoria(sumatoria: Partial<Sumatoria>): Observable<Sumatoria> {
+    return this.http.post<Sumatoria>(this.apiUrl, sumatoria);
+  }
 }
