@@ -9,13 +9,14 @@ import { SumatoriaService, Sumatoria } from './sumatoria.service';
 export class AppComponent {
   numero1: number = 0;
   numero2: number = 0;
+  numero3: number = 0;
   resultado: number | null = null;
   sumatorias: Sumatoria[] = [];
 
   constructor(private sumatoriaService: SumatoriaService,private preloader: PreloaderService) {}
 
   sumar() {
-    this.sumatoriaService.createSumatoria(this.numero1, this.numero2).subscribe(sumatoria => {
+    this.sumatoriaService.createSumatoria(this.numero1, this.numero2, this.numero3).subscribe(sumatoria => {
       this.resultado = sumatoria.resultado;
       this.sumatorias.push(sumatoria);
     });

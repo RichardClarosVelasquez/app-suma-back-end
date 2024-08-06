@@ -1,4 +1,4 @@
-<page-header></page-header>
+<!-- <page-header></page-header> -->
 <mat-toolbar color="primary">
     Pruebas
 </mat-toolbar>
@@ -13,6 +13,12 @@
                 <mat-label>Número 2</mat-label>
                 <input matInput type="number" [(ngModel)]="numero2">
             </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Número 3</mat-label>
+                <input matInput type="number" [(ngModel)]="numero3">
+            </mat-form-field>
+
             <button mat-raised-button color="primary" (click)="sumar()">Sumar</button>
         </mat-card-content>
     </mat-card>
@@ -21,7 +27,7 @@
     </div>
     <mat-card *ngFor="let sumatoria of sumatorias">
         <mat-card-content>
-            {{ sumatoria.numero1 }} + {{ sumatoria.numero2 }} = {{ sumatoria.resultado }}
+            {{ sumatoria.numero1 }} + {{ sumatoria.numero2 }} + {{ sumatoria.numero3 }}  = {{ sumatoria.resultado }}
         </mat-card-content>
     </mat-card>
 </div>

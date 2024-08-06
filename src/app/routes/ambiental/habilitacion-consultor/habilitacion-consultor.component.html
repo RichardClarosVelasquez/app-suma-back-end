@@ -1,0 +1,59 @@
+<p>habilitacion-consultor works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Administraci&oacute;n de Correlativos</mat-card-title>
+    <mat-card-subtitle>npombre completo</mat-card-subtitle>
+  </mat-card-header>
+  <mat-panel-title class="text-font-18">
+  </mat-panel-title><br>
+  <mat-expansion-panel>
+    <div class="matero-row" fxLayout="row wrap">
+      <div class="matero-col" fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card-content>
+          <div>
+            <div class="matero-row" fxLayout="row wrap">
+              <mat-form-field appearance="outline" class="matero-col" fxFlex.gt-sm="20"
+                fxFlex="50">
+                <mat-label>etiqueta1</mat-label>
+                <mat-select>
+                  <mat-option>opcion</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="matero-col"
+                fxFlex.gt-sm="20" fxFlex="50">
+                <mat-label>item</mat-label>
+                <input matInput aria-label="State" [matAutocomplete]="funcionario">
+                <mat-autocomplete #funcionario="matAutocomplete" [panelWidth]="'350px'">
+                  <mat-option >
+                    <small>estado</small>
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="matero-col"
+                fxFlex.gt-sm="20" fxFlex="50">
+                <mat-label>Etiqueta 1</mat-label>
+                <input matInput type="text" class="out">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="matero-col"
+                fxFlex.gt-sm="20" fxFlex="100">
+                <mat-label>etiqueta</mat-label>
+                <input matInput [matDatepicker]="picker" fxFlex.gt-sm="80" fxFlex="100"
+                  class="e-input">
+                <mat-hint>AAAA/MM/DD</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker" fxFlex.gt-sm="20" fxFlex="100" class="e-toggle">
+                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <button mat-raised-button class="btn-primary-600" >Buscar</button>&nbsp;
+            <button mat-raised-button class="btn-primary-600" >Limpiar</button>
+            <button mat-raised-button class="btn-primary-600" [disabled]="false">Descargar Excel</button>
+          </div>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <br>
+  <!-- <app-resultados-busqueda *ngIf="!kill" (backToFind)="xpandBq($event)" (busqueda)="buscar()"></app-resultados-busqueda> -->
+</mat-card>

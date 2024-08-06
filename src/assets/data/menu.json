@@ -32,6 +32,19 @@
           "type": "link"
         }
       ]
+    },
+    {
+      "route": "/",
+      "name": "ambiental",
+      "type": "sub",
+      "icon": "question_answer",
+      "children": [
+        {
+          "route": "habilitacion-consultor",
+          "name": "habilitacion-consultor",
+          "type": "link"
+        }
+      ]
     }
   ]
 }
